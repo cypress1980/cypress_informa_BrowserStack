@@ -13,8 +13,19 @@ jobs:
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           build-name: BUILD_INFO
           project-name: REPO_NAME
-      - name: 'BrowserStackLocal Setup'
-        uses: 'browserstack/github-actions/setup-local@master'
-        with:
-          local-testing: start
-          local-identifier: random
+
+# The next 3 steps are for building the web application to be tested and starting the web server on the runner environment
+      - name: 'Checkout the repository'
+        uses: actions/checkout@v2
+
+      - name: 'Building web application to be tested'
+        run: npm install
+
+      - name: 'Running application under test'
+        run: ./node_modules/.bin/http-server -p 8099 &
+
+      - name: 'Installing browserstack-cypress-cli'
+        run: npm install -g browserstack-cypress-cli
+
+      - name: 'Running test on BrowserStack with local testing enabled'  # Invokes the actual test script that would run on BrowserStack browsers
+        run: - run: BROWSERSTACK_LOCAL=true browserstack-cypress run # See sample test script above
