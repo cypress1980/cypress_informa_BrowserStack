@@ -26,7 +26,7 @@
         "project_name": "Cypress Informa BrowserStack",
         "build_name": "Informa BrowserStack",
         "exclude": [],
-        "parallels": "2",
+        "parallels": "1",
         "npm_dependencies": {},
         "package_config_options": {},
         "headless": true
