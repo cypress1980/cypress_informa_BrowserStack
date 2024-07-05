@@ -1,22 +1,16 @@
 {
-    "auth": {
-        "username": "jarryrobert_xpRuaW",
-        "access_key": "tMZ7xazDR3UZKnPRmEmy"
-    },
     "browsers": [
         {
             "browser": "chrome",
             "os": "Windows 10",
             "versions": [
-                "latest",
-                "latest-1"
+                "latest"
             ]
         },
         {
             "browser": "firefox",
             "os": "Windows 10",
             "versions": [
-                "latest",
                 "latest-1"
             ]
         }
@@ -26,7 +20,7 @@
         "project_name": "Cypress Informa BrowserStack",
         "build_name": "Informa BrowserStack",
         "exclude": [],
-        "parallels": "1",
+        "parallels": "2",
         "npm_dependencies": {},
         "package_config_options": {},
         "headless": true

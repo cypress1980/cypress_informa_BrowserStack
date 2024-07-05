@@ -1,9 +1,9 @@
 name: 'BrowserStack Test'
-on: [push, pull_request]
+on: [push]
 
 jobs:
   ubuntu-job:
-    name: 'BrowserStack Test on Ubuntu'
+    name: 'Run Cypress Test cases into the BrowserStack Enviorement'
     runs-on: ubuntu-latest
     steps:
       - name: 'BrowserStack Env Setup'
@@ -11,8 +11,7 @@ jobs:
         with:
           username:  ${{ secrets.BROWSERSTACK_UERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-          build-name: BUILD_INFO
-          project-name: REPO_NAME
+
 
 # The next 3 steps are for building the web application to be tested and starting the web server on the runner environment
       - name: 'Checkout the repository'
@@ -25,4 +24,4 @@ jobs:
         run: npm install -g browserstack-cypress-cli
 
       - name: 'Running test on BrowserStack with local testing enabled'  # Invokes the actual test script that would run on BrowserStack browsers
-        run: BROWSERSTACK_LOCAL=true browserstack-cypress run # See sample test script above
+        run: BROWSERSTACK_LOCAL=true browserstack-cypress run # Run test script
