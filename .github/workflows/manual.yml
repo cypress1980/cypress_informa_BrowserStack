@@ -1,9 +1,9 @@
-name: 'BrowserStack Test'
+name: 'Informa Food INXchange QA Automation'
 on: [push]
 
 jobs:
   ubuntu-job:
-    name: 'Run Cypress Test cases into the BrowserStack Enviorement'
+    name: 'Run INXchange QA Automation into the BrowserStack Enviorement'
     runs-on: ubuntu-latest
     steps:
       - name: 'BrowserStack Env Setup'
