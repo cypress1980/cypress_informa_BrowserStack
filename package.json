@@ -9,7 +9,12 @@
   "author": "Kailash",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^10.0.0"
+    "cypress": "^10.0.0",
+    "cypress-cucumber-preprocessor":"4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "step_definitions": "cypress/e2e/Tests"
   },
   "devDependencies": {
     "browserstack-cypress-cli": "^1.31.1"
